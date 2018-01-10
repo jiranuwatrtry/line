@@ -28,8 +28,8 @@
          $client = new SoapClient("http://www.pttplc.com/webservice/pttinfo.asmx?WSDL",
 		    	array(
 			           "trace"      => 1,		// enable trace to view what is happening
-			           "exceptions" => 1,		// disable exceptions
-			          "cache_wsdl" => 1) 		// disable any caching on the wsdl, encase you alter the wsdl server
+			           "exceptions" => 0,		// disable exceptions
+			          "cache_wsdl" => 0) 		// disable any caching on the wsdl, encase you alter the wsdl server
 		           );
 
                $params = array(
