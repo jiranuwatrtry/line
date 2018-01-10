@@ -26,7 +26,7 @@
          
          
          
-         $client = new SoapClient("http://www.pttplc.com/webservice/pttinfo.asmx?WSDL",
+         $client = "http://www.pttplc.com/webservice/pttinfo.asmx?WSDL",
 		    	array(
 			           "trace"      => 1,		// enable trace to view what is happening
 			           "exceptions" => 0,		// disable exceptions
