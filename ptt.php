@@ -25,8 +25,10 @@
          <?php 
          
          
+         include("lib/nusoap.php");
+
+$client = new nusoap_client("http://www.pttplc.com/webservice/pttinfo.asmx?WSDL",true);
          
-         $client = "http://www.pttplc.com/webservice/pttinfo.asmx?WSDL",
 		    	array(
 			           "trace"      => 1,		// enable trace to view what is happening
 			           "exceptions" => 0,		// disable exceptions
