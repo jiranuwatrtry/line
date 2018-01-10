@@ -35,9 +35,9 @@
 
                $params = array(
                      'Language' => "th",
-                   'DD' => "10",
-                   'MM' => "01",
-                   'YYYY' => "2018"
+                   'DD' => date('d'),
+                   'MM' => date('m'),
+                   'YYYY' => date('Y')
                );
 
 		        $data = $client->GetOilPrice($params);
