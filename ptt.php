@@ -10,17 +10,14 @@ $client = new SoapClient("http://www.pttplc.com/webservice/pttinfo.asmx?WSDL", /
 
          // ตัวแปลที่ webservice ต้องการสำหรับ GetOilPriceResult เป็นวันเดือนปีและ ภาษา  
                $params = array(
-                   'Language' => "en",
-                   'DD' => date('d'),
-                   'MM' => date('m'),
-                   'YYYY' => date('Y')
+                   'Language' => "th"
                );
 
               // เรียกใช้ method GetOilPrice และ ใส่ตัวแปลเข้าไป 
-              $data = $client->GetOilPrice($params);
+              $data = $client->CurrentOilPrice($params);
               
               //เก็บตัวแปลผลลัพธ์ที่ได้
-              $ob = $data->GetOilPriceResult;
+              $ob = $data->CurrentOilPriceResult;
               
              // เนื่องจากข้อมูลที่ได้เป็น string(ในรูปแบบ xml) จึงต้องแปลงเป็น object ให้ง่ายต่อการเข้าถึง
               $xml = new SimpleXMLElement($ob);
