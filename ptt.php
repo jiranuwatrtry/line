@@ -7,19 +7,13 @@
 
 
 
-<style>
 
-*{margin:0;padding:0;}
-
-                        
-
-</style>
 
   
 </head>                  
 
 <body>
-       <div style="max-width:100%;width:400px;margin:auto;">
+      
          <h3>ราคานำ้มันวันนี้</h3>
     
          <?php 
@@ -56,7 +50,7 @@
          
          ?>
            
-   </div>
+
   
 </body>
 
