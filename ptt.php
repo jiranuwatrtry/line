@@ -32,13 +32,18 @@
 			           "exceptions" => 0,		// disable exceptions
 			          "cache_wsdl" => 0) 		// disable any caching on the wsdl, encase you alter the wsdl server
 		           );
+$lang = 'en';
+$day = '11';
+$month ='01';
+$year ='2018';
 
-               $params = array(
-                   'Language' => "en",
-                   'DD' => date('d'),
-                   'MM' => date('m'),
-                   'YYYY' => date('Y')
-               );
+// ตัวแปลที่ webservice ต้องการสำหรับ GetOilPriceResult เป็นวันเดือนปีและ ภาษา  
+$params = array(
+	'Language' => "en",
+	'DD' => date($day),
+    'MM' => date($month),
+    'YYYY' => date($year)
+    );
 
 		        $data = $client->GetOilPrice($params);
               $ob = $data->GetOilPriceResult;
