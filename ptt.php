@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<title>PTT WEB SERVICE</title>
@@ -33,10 +34,10 @@
 		           );
 
                $params = array(
-                    'Language' => "en",
+                   'Language' => "en",
                    'DD' => date('d'),
                    'MM' => date('m'),
-                   'YYYY' => date('y')
+                   'YYYY' => date('Y')
                );
 
 		        $data = $client->GetOilPrice($params);
