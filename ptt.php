@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 	<head>
 		<title>PTT WEB SERVICE</title>
 		<meta charset="utf-8">
@@ -34,7 +34,7 @@
 		           );
 
                $params = array(
-                     'Language' => "en",
+                     'Language' => "th",
                    'DD' => "10",
                    'MM' => "01",
                    'YYYY' => "2018"
