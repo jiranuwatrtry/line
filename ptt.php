@@ -33,7 +33,7 @@
 		           );
 
                $params = array(
-                   'Language' => "en",
+                   'Language' => th",
                    'DD' => date('d'),
                    'MM' => date('m'),
                    'YYYY' => date('Y')
