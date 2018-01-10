@@ -25,27 +25,20 @@
          <?php 
          
          
-         include("lib/nusoap.php");
-
-$client = new nusoap_client("http://www.pttplc.com/webservice/pttinfo.asmx?WSDL",true);
          
+         $client = new SoapClient("http://www.pttplc.com/webservice/pttinfo.asmx?WSDL",
 		    	array(
 			           "trace"      => 1,		// enable trace to view what is happening
 			           "exceptions" => 0,		// disable exceptions
 			          "cache_wsdl" => 0) 		// disable any caching on the wsdl, encase you alter the wsdl server
 		           );
-$lang = 'en';
-$day = '11';
-$month ='01';
-$year ='2018';
 
-// ตัวแปลที่ webservice ต้องการสำหรับ GetOilPriceResult เป็นวันเดือนปีและ ภาษา  
-$params = array(
-	'Language' => "en",
-	'DD' => date($day),
-    'MM' => date($month),
-    'YYYY' => date($year)
-    );
+               $params = array(
+                   'Language' => "en",
+                   'DD' => date('d'),
+                   'MM' => date('m'),
+                   'YYYY' => date('Y')
+               );
 
 		        $data = $client->GetOilPrice($params);
               $ob = $data->GetOilPriceResult;
