@@ -1,27 +1,4 @@
-<html lang="en">
-	<head>
-		<title>PTT WEB SERVICE</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-
-
-
-<style>
-
-*{margin:0;padding:0;}
-
-                        
-
-</style>
-
-  
-</head>                  
-
-<body>
-       <div style="max-width:100%;width:400px;margin:auto;">
-         <h3>ราคานำ้มันวันนี้</h3>
-    
-         <?php
+<?php
 
 // สร้าง object 
 // URL ของ webservice
@@ -67,13 +44,3 @@ foreach ($xml  as  $key =>$val) {
 }
 
 ?>
-           
-   </div>
-  
-</body>
-
-
-    
-    
-</html>
-    
