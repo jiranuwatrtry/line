@@ -34,10 +34,10 @@
 		           );
 
                $params = array(
-                   'Language' => "en",
-                   'DD' => date('d'),
-                   'MM' => date('m'),
-                   'YYYY' => date('Y')
+                     'Language' => "en",
+                   'DD' => "10",
+                   'MM' => "01",
+                   'YYYY' => "2018"
                );
 
 		        $data = $client->GetOilPrice($params);
