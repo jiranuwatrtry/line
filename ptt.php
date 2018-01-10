@@ -36,8 +36,8 @@
                    'Language' => th"
                );
 
-		        $data = $client->CurrentOilPrice($params);
-              $ob = $data->CurrentOilPriceResult;
+		        $data = $client->GetOilPrice($params);
+              $ob = $data->GetOilPriceResult;
             $xml = new SimpleXMLElement($ob);
            
                // PRICE_DATE , PRODUCT ,PRICE
