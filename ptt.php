@@ -47,9 +47,9 @@
                // PRICE_DATE , PRODUCT ,PRICE
               foreach ($xml  as  $key =>$val) {  
               
-            if($val->PRICE != ''){
+            
               echo $val->PRODUCT .'  '.$val->PRICE.' บาท<br>';
-                }
+                
 
                }
          
