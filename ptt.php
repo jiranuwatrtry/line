@@ -33,14 +33,11 @@
 		           );
 
                $params = array(
-                   'Language' => th",
-                   'DD' => date('d'),
-                   'MM' => date('m'),
-                   'YYYY' => date('Y')
+                   'Language' => th"
                );
 
-		        $data = $client->GetOilPrice($params);
-              $ob = $data->GetOilPriceResult;
+		        $data = $client->CurrentOilPrice($params);
+              $ob = $data->CurrentOilPriceResult;
             $xml = new SimpleXMLElement($ob);
            
                // PRICE_DATE , PRODUCT ,PRICE
