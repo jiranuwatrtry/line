@@ -1,67 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>PTT WEB SERVICE</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<?php
+// ที่อยู่ของเอกสาร WSDL ของเว็บเซอร์วิส ปตท");
+$wsdl = 'http://www.pttplc.com/webservice/pttinfo.asmx?WSDL';
+
+// สร้างออปเจกต์ SoapClient เพื่อเรียกใช้เว็บเซอร์วิส
+$client = new SoapClient($wsdl);
 
 
+ 
+// เมธอดที่ต้องการเรียกใช้ CurrentOilPrice
+$methodName = 'CurrentOilPrice';
 
-<style>
+// อินพุตพารามิเตอร์ของเมธอด CurrentOilPrice คือ
+// Language ซึ่งเราตั้งค่าให้เป็น EN
+$params = array('Language'=>'TH');
 
-*{margin:0;padding:0;}
+// ระบุค่าของ SOAP Action URI
+$soapAction = 'http://www.pttplc.com/ptt_webservice/CurrentOilPrice';
 
-                        
+// ใช้ฟังก์ชัน _soapCall ในการเรียกเมธอดที่ระบุ
+// ต้องระบุพารามิเตอร์และ SOAP Action
+$objectResult = $client->__soapCall($methodName, array('parameters' => $params), array('soapaction' => $soapAction));
 
-</style>
+// จะต้องดูค่าฟิลด์ที่ชื่อตรงกับชื่อของอิลิเมนต์ที่ระบุใน
+// Output Message ซึ่งในที่นี้ก็คือ
+// CurrentOilPriceResult
+//echo $objectResult->CurrentOilPriceResult;
 
-  
-</head>                  
-
-<body>
-       <div style="max-width:100%;width:400px;margin:auto;">
-         <h3>ราคานำ้มันวันนี้</h3>
-    
-         <?php 
-         
-         
-         
-         $client = new SoapClient("http://www.pttplc.com/webservice/pttinfo.asmx?WSDL",true
-		    	//array(
-		        //  "trace"      => 1,		// enable trace to view what is happening
-			   //      "exceptions" => 0,		// disable exceptions
-			  //      "cache_wsdl" => 0) 		// disable any caching on the wsdl, encase you alter the wsdl server
-		           );
-
-               $params = array(
-                   'Language' => "en",
-                   'DD' => date('d'),
-                   'MM' => date('m'),
-                   'YYYY' => date('Y')
-               );
-
-		        $data = $client->GetOilPrice($params);
-              $ob = $data->GetOilPriceResult;
+ $ob = $objectResult->CurrentOilPriceResult;
             $xml = new SimpleXMLElement($ob);
            
                // PRICE_DATE , PRODUCT ,PRICE
               foreach ($xml  as  $key =>$val) {  
               
-           
+            if($val->PRICE != ''){
               echo $val->PRODUCT .'  '.$val->PRICE.' บาท<br>';
-                
+                }
 
                }
-         
-         
-         ?>
-           
-   </div>
-  
-</body>
 
-
-    
-    
-</html>
-    
+?>
