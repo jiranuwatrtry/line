@@ -3,9 +3,8 @@
 $wsdl = 'http://www.pttplc.com/webservice/pttinfo.asmx?WSDL';
 
 // สร้างออปเจกต์ SoapClient เพื่อเรียกใช้เว็บเซอร์วิส
-require_once("lib/nusoap.php");
-$client = new nusoap_client($wsdl,true);
-//$client = new SoapClient($wsdl);
+
+$client = new SoapClient($wsdl);
 
 
  
