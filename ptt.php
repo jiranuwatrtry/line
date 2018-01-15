@@ -12,7 +12,7 @@ $client = new SoapClient($wsdl);
 $methodName = 'CurrentOilPrice';
 
 // อินพุตพารามิเตอร์ของเมธอด CurrentOilPrice คือ
-// Language ซึ่งเราตั้งค่าให้เป็น EN
+// Language ซึ่งเราตั้งค่าให้เป็น TH
 $params = array('Language'=>'TH');
 
 // ระบุค่าของ SOAP Action URI
