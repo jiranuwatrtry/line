@@ -18,7 +18,12 @@ if (!is_null($events['events'])) {
 			if($text == 'น้ำมัน'){
 			$messages = [
 				'type' => 'text',
-				'text' => $text." : http://www.pttplc.com/th/Media-Center/Oil-Price/pages/Bangkok-Oil-Price.aspx?s=1"
+				'text' => $text." : http://www.pttplc.com/th/getoilprice.aspx"
+				];
+			}else if($text == 'โทรศัพท์'){
+			$messages = [
+				'type' => 'text',
+				'text' => $text." : https://www.toteservice.com/MainEs/"
 				];
 			}else{
 			// Build message to reply back
