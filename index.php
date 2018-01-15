@@ -42,6 +42,17 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 
 			echo $result . "\r\n";
+			$ch1 = curl_init();                    // initiate curl
+			$posturl = "https://boiling-lake-75961.herokuapp.com/ptt.php";
+			
+			curl_setopt($ch, CURLOPT_URL,$posturl);
+			curl_setopt($ch, CURLOPT_POST, 1);  // tell curl you want to post something
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $text); // define what you want to post
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); // return the output in string format
+			$output = curl_exec ($ch1); // execute
+
+			curl_close ($ch1); // close curl handle
+			
 		}
 	}
 }
