@@ -15,14 +15,19 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 					// Get replyToken
 			$replyToken = $event['replyToken'];
-
+			if($text == 'น้ำมัน'){
+			$messages = [
+				'type' => 'text',
+				'text' => $text." : http://www.pttplc.com/th/Media-Center/Oil-Price/pages/Bangkok-Oil-Price.aspx?s=1"
+				];
+			}else{
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
 				'text' => $text." : รับทราบครับ"
 				
 			];
-
+			}
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
