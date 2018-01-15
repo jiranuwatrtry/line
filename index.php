@@ -17,8 +17,8 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			if($text == 'น้ำมัน'){
 			$messages = [
-				'type' => 'text',
-				'text' => $text." : http://www.pttplc.com/th/getoilprice.aspx"
+				'type' => 'url',
+				'url' =>"http://www.pttplc.com/th/getoilprice.aspx"
 				];
 			}else if($text == 'โทรศัพท์'){
 			$messages = [
