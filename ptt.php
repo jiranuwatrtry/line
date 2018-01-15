@@ -20,7 +20,7 @@ $methodName = 'CurrentOilPrice';
 
 // อินพุตพารามิเตอร์ของเมธอด CurrentOilPrice คือ
 // Language ซึ่งเราตั้งค่าให้เป็นตัวแปร $Language
-$params = array('Language'=>'TH');
+$params = array('Language'=>$Language);
 
 // ระบุค่าของ SOAP Action URI
 $soapAction = 'http://www.pttplc.com/ptt_webservice/CurrentOilPrice';
