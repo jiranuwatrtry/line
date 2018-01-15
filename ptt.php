@@ -33,7 +33,7 @@ $objectResult = $client->__soapCall($methodName, array('parameters' => $params),
 // Output Message ซึ่งในที่นี้ก็คือ
 // CurrentOilPriceResult
 //echo $objectResult->CurrentOilPriceResult;
-
+echo 'Language : '.$params->Language.'<br>';
  $ob = $objectResult->CurrentOilPriceResult;
             $xml = new SimpleXMLElement($ob);
            
